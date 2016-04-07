@@ -15,7 +15,7 @@ public void test1() throws Exception{
 
     
   
-    String[] str1 = { "-a", "text", "6" };
+    String[] str1 = { "-a", "text", "1" };
     generate.generateFile(str1);
     String[] str2 = { "text", "3", "stat" };
     Mergesort.main(str2);
