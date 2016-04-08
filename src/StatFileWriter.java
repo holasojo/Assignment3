@@ -14,6 +14,12 @@ public class StatFileWriter {
     BufferedWriter bw;
     BufferPool pool;
 
+    /**
+     * constructor for the writer
+     * @param statFile is the file that writes to
+     * @param b is buffer pool
+     * @throws IOException
+     */
     public StatFileWriter(String statFile, BufferPool b) throws IOException {
         writer = new FileWriter(statFile, true);
         bw = new BufferedWriter(writer);
@@ -21,6 +27,13 @@ public class StatFileWriter {
 
     }
 
+    /**
+     * Actually write to the file
+     * 
+     * @param filename is the input file name
+     * @param time how long it took
+     * @throws IOException
+     */
     public void write(String filename, double time) throws IOException {
         bw.write("Filename:     " + filename + '\n');
         bw.write("Cache Hits:   " + pool.getCacheHits() + '\n');
