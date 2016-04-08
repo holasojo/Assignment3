@@ -169,8 +169,8 @@ public class BufferPool {
                                                                   // ++i
             if (pool.getValue().isDirty()) {
 
-                input.seek(pool.getValue().getID() * blockSize);
-                input.write(pool.getValue().getBuffer());
+                pool.getValue().getFile().seek(pool.getValue().getID() * blockSize);
+                pool.getValue().getFile().write(pool.getValue().getBuffer());
 
             }
         }
