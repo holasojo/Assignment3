@@ -12,33 +12,33 @@ public class Processor {
     private int buffNum;
     private RandomAccessFile dataAccess;
     private RandomAccessFile tempFileAccess;
-    
-    
-    public Processor(String data, String stat, int buff) throws FileNotFoundException{
+
+    public Processor(String data, String stat, int buff)
+            throws FileNotFoundException {
         dataFile = data;
         statFile = stat;
         tempFile = "temp.txt";
         buffNum = buff;
         dataAccess = new RandomAccessFile(dataFile, "rw");
         tempFileAccess = new RandomAccessFile(tempFile, "rw");
-        
+
     }
-    
+
     public void run() throws IOException {
 
         BufferPool pool = new BufferPool(dataAccess, buffNum);
         BufferSort sorter = new BufferSort(pool);
 
         long begin = System.currentTimeMillis();
-        sorter.mergeSortHelp(dataAccess, tempFileAccess, 0, (int)(pool.fileLength()/4 - 1));
+        sorter.mergeSortHelp(dataAccess, tempFileAccess, 0,
+                (int) (pool.fileLength() / 4 - 1));
         pool.flush();
         long end = System.currentTimeMillis();
-        double timetaken = (double) end-begin;
-        System.out.println("Sorting took " + timetaken / 1000.0
-                + " seconds");
+        double timetaken = (double) end - begin;
+        System.out.println("Sorting took " + timetaken / 1000.0 + " seconds");
 
         StatFileWriter fw = new StatFileWriter(statFile, pool);
         fw.write(dataFile, timetaken);
-        
+
     }
 }
