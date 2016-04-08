@@ -2,6 +2,13 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * This is for writing statistics to the file.
+ * @author sohyun
+ * @author sshumway
+ * @version 4/7/2016
+ *
+ */
 public class StatFileWriter {
     FileWriter writer;
     BufferedWriter bw;
