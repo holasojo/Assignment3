@@ -1,76 +1,127 @@
 import java.io.RandomAccessFile;
+import java.util.Arrays;
 
 /**
- * @author Thomas Dowey tdowey3
- * @version 10-27-2014 Buffer class - stores and edits data from disk
+ * Buffer class, holds data being stored originally stored on disk. 
+ * 
+ * @author sohyun
+ * @author sshumway
+ *
  */
-public class Buffer {
-    /**
-     * the block
-     */
-    public byte[] buff;
-    /**
-     * status if data was written to this block
-     */
-    public boolean isDirty;
-    /**
-     * label for the block
-     */
-    public int number;
+public class Buffer
+{
     
-    RandomAccessFile disk;
+    private int id; 
+    private boolean dirtyBit; 
+    private byte[] buffer;
 
-    /**
-     * @param number - block number in the disk
-     * @param data - data read from disk constructor 
-     * constructor - gets data from disk and stores it
-     */
-    public Buffer(int number, byte[] data, RandomAccessFile file) {
-        buff = data;
-        this.number = number;
-        isDirty = false;
-        disk = file;
-    }
-
-    /**
-     * * @param pos - position within buffer
-     * @param len - number of bytes to get
-     * @return the data Read the associated block from disk (if necessary) and
-     * return a pointer to the data
-     */
- 
-    public byte[] getData(int pos, int len) {
-        // gets data from position in the block
-        byte[] data = new byte[len];
-        for (int i = 0; i < len; i++) {
-            data[i] = buff[pos + i];
-        }
-        return data;
-    }
-
-    
-    public RandomAccessFile getDisk(){
-        return disk;
-        
-        
-    }
-    public void setDisk(RandomAccessFile file){
-        disk = file;
-    }
-    /**
-     * @param space - data to be added to buffer
-     * @param pos - position where data needs to be written to Flag buffer's
-     * contents as having changed, so that flushing the block will
-     * write it back to disk
-     */
+   RandomAccessFile disk;
    
-    public void markDirty(byte[] space, int pos) {
-        // writes over data in a position within the block and
-        // sets it to dirty
-        for (int i = 0; i < space.length; i++) {
-            buff[pos + i] = space[i];
-        }
-        isDirty = true;
+    
+    /**
+     * Constructor for buffer.
+     * 
+     * @param buf The data being copied to the buffer from disk.
+     * @param num The ID to determine data's position in disk file.
+     * @param file The parent file to which the data belongs.
+     */
+    public Buffer(int blockID, int size, RandomAccessFile file)
+    {
+        buffer = new byte[size];
+        id = blockID;
+        disk = file;
+        dirtyBit = false;
     }
 
+    /**
+     * Determines if the data in the buffer
+     * has been changed.
+     * 
+     * @return True if changed, else false.
+     */
+    public boolean isDirty()
+    {
+        return dirtyBit;
+    }
+
+    /**
+     * Sets the buffers parent file. Used when buffer is 
+     * written to disk and then reused with a different file.
+     * 
+     * @param file The parent file.
+     */
+    public void setFile(RandomAccessFile file){
+        disk = file;
+    }
+    
+    /**
+     * Used to obtain reference to parent file. Used when the client
+     * is searching for a specific buffer.
+     * 
+     * @return The parent file.
+     */
+    public RandomAccessFile getFile(){
+        return disk;
+    }
+    
+    
+    /**
+     * Setter for the dirty bit.
+     * 
+     * @param bool True or false.
+     */
+    public void setDirty( boolean bool )
+    {
+        dirtyBit = bool;
+    }
+
+    /**
+     * Returns block id, used to determine what position
+     * to write the buffer to in the original file.
+     * 
+     * @return The block ID.
+     */
+    public int getID()
+    {
+        return id;
+    }
+
+    /**
+     * Sets the block ID.
+     * 
+     * @param num The ID.
+     */
+    public void setID( int num )
+    {
+        this.id = num;
+    }
+    
+    /**
+     * Returns the data stored in the buffer.
+     * 
+     * @return The byte array.
+     */
+    public byte[] getBuffer()
+    {
+        return buffer;
+    }
+
+    /**
+     * Sets the reference to data stored in 
+     * the buffer.
+     * 
+     * @param buf New data.
+     */
+    public void setBuffer( byte[] buf )
+    {
+        this.buffer = buf;
+    }
+    
+    /**
+     * Prints string reprsentation of data
+     * stored in buffer.
+     */
+    public String toString(){
+       return Arrays.toString(buffer);
+    }
 }

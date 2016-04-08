@@ -49,6 +49,7 @@ public class CheckFile
                 in.readShort();
                 if (key1 > key2)
                 {
+                    System.out.printf("key1: %x        key2: %x\n", key1, key2);
                     isError = true;
                 }
             }

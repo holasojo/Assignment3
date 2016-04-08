@@ -1,0 +1,1645 @@
+Filename:     text
+Cache Hits:   38183
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   83627
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    42.0
+
+Filename:     text
+Cache Hits:   122667
+Cache Misses: 142
+Disk Reads:   142
+Disk Writes:  96
+Time (ms):    60.0
+
+Filename:     text
+Cache Hits:   181530
+Cache Misses: 39
+Disk Reads:   39
+Disk Writes:  24
+Time (ms):    72.0
+
+Filename:     text
+Cache Hits:   217671
+Cache Misses: 308
+Disk Reads:   308
+Disk Writes:  197
+Time (ms):    80.0
+
+Filename:     text
+Cache Hits:   273708
+Cache Misses: 310
+Disk Reads:   310
+Disk Writes:  206
+Time (ms):    95.0
+
+Filename:     text
+Cache Hits:   38265
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    32.0
+
+Filename:     text
+Cache Hits:   83655
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    53.0
+
+Filename:     text
+Cache Hits:   83759
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    54.0
+
+Filename:     text
+Cache Hits:   82942
+Cache Misses: 29698
+Disk Reads:   29698
+Disk Writes:  12287
+Time (ms):    175.0
+
+Filename:     text
+Cache Hits:   127317
+Cache Misses: 59473
+Disk Reads:   59473
+Disk Writes:  27409
+Time (ms):    358.0
+
+Filename:     text
+Cache Hits:   82942
+Cache Misses: 29698
+Disk Reads:   29698
+Disk Writes:  12287
+Time (ms):    176.0
+
+Filename:     text
+Cache Hits:   38145
+Cache Misses: 13055
+Disk Reads:   13055
+Disk Writes:  5630
+Time (ms):    95.0
+
+Filename:     text
+Cache Hits:   179188
+Cache Misses: 66572
+Disk Reads:   66572
+Disk Writes:  27138
+Time (ms):    312.0
+
+Filename:     text
+Cache Hits:   219957
+Cache Misses: 112371
+Disk Reads:   112371
+Disk Writes:  53728
+Time (ms):    584.0
+
+Filename:     text
+Cache Hits:   273027
+Cache Misses: 133275
+Disk Reads:   133275
+Disk Writes:  62397
+Time (ms):    656.0
+
+Filename:     text
+Cache Hits:   125186
+Cache Misses: 59514
+Disk Reads:   59514
+Disk Writes:  28373
+Time (ms):    415.0
+
+Filename:     text
+Cache Hits:   82942
+Cache Misses: 29698
+Disk Reads:   29698
+Disk Writes:  12287
+Time (ms):    239.0
+
+Filename:     text
+Cache Hits:   82942
+Cache Misses: 29698
+Disk Reads:   29698
+Disk Writes:  12287
+Time (ms):    155.0
+
+Filename:     text
+Cache Hits:   125606
+Cache Misses: 60486
+Disk Reads:   60486
+Disk Writes:  28693
+Time (ms):    514.0
+
+Filename:     text
+Cache Hits:   126141
+Cache Misses: 139
+Disk Reads:   139
+Disk Writes:  95
+Time (ms):    61.0
+
+Filename:     text
+Cache Hits:   38227
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    27.0
+
+Filename:     text
+Cache Hits:   83597
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    42.0
+
+Filename:     text
+Cache Hits:   118788
+Cache Misses: 138
+Disk Reads:   138
+Disk Writes:  94
+Time (ms):    60.0
+
+Filename:     text
+Cache Hits:   128384
+Cache Misses: 141
+Disk Reads:   141
+Disk Writes:  96
+Time (ms):    49.0
+
+Filename:     text
+Cache Hits:   38221
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   83637
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    41.0
+
+Filename:     text
+Cache Hits:   129686
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  5
+Time (ms):    41.0
+
+Filename:     text
+Cache Hits:   191293
+Cache Misses: 111
+Disk Reads:   111
+Disk Writes:  89
+Time (ms):    64.0
+
+Filename:     text
+Cache Hits:   119231
+Cache Misses: 138
+Disk Reads:   138
+Disk Writes:  94
+Time (ms):    58.0
+
+Filename:     text
+Cache Hits:   38237
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    28.0
+
+Filename:     text
+Cache Hits:   83595
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    45.0
+
+Filename:     text
+Cache Hits:   181630
+Cache Misses: 39
+Disk Reads:   39
+Disk Writes:  24
+Time (ms):    73.0
+
+Filename:     text
+Cache Hits:   181562
+Cache Misses: 39
+Disk Reads:   39
+Disk Writes:  24
+Time (ms):    74.0
+
+Filename:     text
+Cache Hits:   150474
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  8
+Time (ms):    64.0
+
+Filename:     text
+Cache Hits:   181340
+Cache Misses: 39
+Disk Reads:   39
+Disk Writes:  24
+Time (ms):    90.0
+
+Filename:     text
+Cache Hits:   38257
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    23.0
+
+Filename:     text
+Cache Hits:   83685
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    39.0
+
+Filename:     text
+Cache Hits:   84658
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    41.0
+
+Filename:     text
+Cache Hits:   24573
+Cache Misses: 88071
+Disk Reads:   88071
+Disk Writes:  45055
+Time (ms):    562.0
+
+Filename:     text
+Cache Hits:   83625
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    45.0
+
+Filename:     text
+Cache Hits:   84620
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    44.0
+
+Filename:     text
+Cache Hits:   84522
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    48.0
+
+Filename:     text
+Cache Hits:   84808
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    40.0
+
+Filename:     text
+Cache Hits:   134711
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    58.0
+
+Filename:     text
+Cache Hits:   134683
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    58.0
+
+Filename:     text
+Cache Hits:   185515
+Cache Misses: 13
+Disk Reads:   13
+Disk Writes:  6
+Time (ms):    60.0
+
+Filename:     text
+Cache Hits:   185538
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    93.0
+
+Filename:     text
+Cache Hits:   185300
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    71.0
+
+Filename:     text
+Cache Hits:   239453
+Cache Misses: 10
+Disk Reads:   10
+Disk Writes:  0
+Time (ms):    87.0
+
+Filename:     text
+Cache Hits:   239161
+Cache Misses: 10
+Disk Reads:   10
+Disk Writes:  0
+Time (ms):    75.0
+
+Filename:     text
+Cache Hits:   519734
+Cache Misses: 20
+Disk Reads:   20
+Disk Writes:  0
+Time (ms):    98.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    163.0
+
+Filename:     text
+Cache Hits:   81552
+Cache Misses: 5022
+Disk Reads:   5022
+Disk Writes:  2017
+Time (ms):    77.0
+
+Filename:     text
+Cache Hits:   83565
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    47.0
+
+Filename:     text
+Cache Hits:   84640
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    43.0
+
+Filename:     text
+Cache Hits:   84508
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    47.0
+
+Filename:     text
+Cache Hits:   134665
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    57.0
+
+Filename:     text
+Cache Hits:   134633
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    59.0
+
+Filename:     text
+Cache Hits:   185416
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    80.0
+
+Filename:     text
+Cache Hits:   185450
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    93.0
+
+Filename:     text
+Cache Hits:   185372
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    65.0
+
+Filename:     text
+Cache Hits:   12287
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    210.0
+
+Filename:     text
+Cache Hits:   12287
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    164.0
+
+Filename:     text
+Cache Hits:   38241
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    22.0
+
+Filename:     text
+Cache Hits:   38239
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   38279
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    22.0
+
+Filename:     text
+Cache Hits:   38269
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    28.0
+
+Filename:     text
+Cache Hits:   38299
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    28.0
+
+Filename:     text
+Cache Hits:   12287
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    247.0
+
+Filename:     text
+Cache Hits:   38283
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    25.0
+
+Filename:     text
+Cache Hits:   12287
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    178.0
+
+Filename:     text
+Cache Hits:   38271
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    26.0
+
+Filename:     text
+Cache Hits:   38139
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   38269
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    22.0
+
+Filename:     text
+Cache Hits:   38193
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    35.0
+
+Filename:     text
+Cache Hits:   38229
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    31.0
+
+Filename:     text
+Cache Hits:   38297
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    19.0
+
+Filename:     text
+Cache Hits:   12287
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    293.0
+
+Filename:     text
+Cache Hits:   38263
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   38225
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    26.0
+
+Filename:     text
+Cache Hits:   38239
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    26.0
+
+Filename:     text
+Cache Hits:   38275
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    27.0
+
+Filename:     text
+Cache Hits:   83617
+Cache Misses: 11
+Disk Reads:   5
+Disk Writes:  6
+Time (ms):    40.0
+
+Filename:     text
+Cache Hits:   84644
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    41.0
+
+Filename:     text
+Cache Hits:   84638
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    69.0
+
+Filename:     text
+Cache Hits:   84674
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    68.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    216.0
+
+Filename:     text
+Cache Hits:   38199
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    25.0
+
+Filename:     text
+Cache Hits:   38289
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    32.0
+
+Filename:     text
+Cache Hits:   293702
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    108.0
+
+Filename:     text
+Cache Hits:   293786
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    101.0
+
+Filename:     text
+Cache Hits:   293764
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    106.0
+
+Filename:     text
+Cache Hits:   79737
+Cache Misses: 313467
+Disk Reads:   157820
+Disk Writes:  155647
+Time (ms):    791.0
+
+Filename:     text
+Cache Hits:   79623
+Cache Misses: 313505
+Disk Reads:   157858
+Disk Writes:  155647
+Time (ms):    1480.0
+
+Filename:     text
+Cache Hits:   293682
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    76.0
+
+Filename:     text
+Cache Hits:   293638
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    115.0
+
+Filename:     text
+Cache Hits:   293776
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    79.0
+
+Filename:     text
+Cache Hits:   293658
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    96.0
+
+Filename:     text
+Cache Hits:   293952
+Cache Misses: 12
+Disk Reads:   12
+Disk Writes:  0
+Time (ms):    86.0
+
+Filename:     text
+Cache Hits:   5890584
+Cache Misses: 1804
+Disk Reads:   799
+Disk Writes:  1005
+Time (ms):    569.0
+
+Filename:     text
+Cache Hits:   6542176
+Cache Misses: 200
+Disk Reads:   200
+Disk Writes:  0
+Time (ms):    670.0
+
+Filename:     text
+Cache Hits:   6542552
+Cache Misses: 200
+Disk Reads:   200
+Disk Writes:  0
+Time (ms):    734.0
+
+Filename:     text
+Cache Hits:   6542682
+Cache Misses: 200
+Disk Reads:   200
+Disk Writes:  0
+Time (ms):    692.0
+
+Filename:     text
+Cache Hits:   5646686
+Cache Misses: 2242
+Disk Reads:   1011
+Disk Writes:  1231
+Time (ms):    519.0
+
+Filename:     text
+Cache Hits:   6541626
+Cache Misses: 200
+Disk Reads:   200
+Disk Writes:  0
+Time (ms):    665.0
+
+Filename:     text
+Cache Hits:   6540817
+Cache Misses: 277
+Disk Reads:   199
+Disk Writes:  78
+Time (ms):    636.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    124.0
+
+Filename:     text
+Cache Hits:   74082
+Cache Misses: 5022
+Disk Reads:   3005
+Disk Writes:  2017
+Time (ms):    72.0
+
+Filename:     text
+Cache Hits:   74110
+Cache Misses: 5025
+Disk Reads:   3007
+Disk Writes:  2018
+Time (ms):    64.0
+
+Filename:     text
+Cache Hits:   24573
+Cache Misses: 88071
+Disk Reads:   43016
+Disk Writes:  45055
+Time (ms):    267.0
+
+Filename:     text
+Cache Hits:   83543
+Cache Misses: 11
+Disk Reads:   5
+Disk Writes:  6
+Time (ms):    40.0
+
+Filename:     text
+Cache Hits:   84658
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    52.0
+
+Filename:     text
+Cache Hits:   84588
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    40.0
+
+Filename:     text
+Cache Hits:   84686
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    59.0
+
+Filename:     text
+Cache Hits:   118060
+Cache Misses: 139
+Disk Reads:   45
+Disk Writes:  94
+Time (ms):    54.0
+
+Filename:     text
+Cache Hits:   132654
+Cache Misses: 12
+Disk Reads:   5
+Disk Writes:  7
+Time (ms):    53.0
+
+Filename:     text
+Cache Hits:   134655
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    63.0
+
+Filename:     text
+Cache Hits:   134725
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    70.0
+
+Filename:     text
+Cache Hits:   134731
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    60.0
+
+Filename:     text
+Cache Hits:   125685
+Cache Misses: 140
+Disk Reads:   46
+Disk Writes:  94
+Time (ms):    57.0
+
+Filename:     text
+Cache Hits:   134791
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    78.0
+
+Filename:     text
+Cache Hits:   134519
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    59.0
+
+Filename:     text
+Cache Hits:   185270
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    74.0
+
+Filename:     text
+Cache Hits:   185394
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    79.0
+
+Filename:     text
+Cache Hits:   185444
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    70.0
+
+Filename:     text
+Cache Hits:   167364
+Cache Misses: 24
+Disk Reads:   9
+Disk Writes:  15
+Time (ms):    77.0
+
+Filename:     text
+Cache Hits:   174219
+Cache Misses: 22
+Disk Reads:   10
+Disk Writes:  12
+Time (ms):    99.0
+
+Filename:     text
+Cache Hits:   167478
+Cache Misses: 39
+Disk Reads:   15
+Disk Writes:  24
+Time (ms):    63.0
+
+Filename:     text
+Cache Hits:   167364
+Cache Misses: 39
+Disk Reads:   15
+Disk Writes:  24
+Time (ms):    66.0
+
+Filename:     text
+Cache Hits:   167446
+Cache Misses: 39
+Disk Reads:   15
+Disk Writes:  24
+Time (ms):    72.0
+
+Filename:     text
+Cache Hits:   185576
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    62.0
+
+Filename:     text
+Cache Hits:   167424
+Cache Misses: 39
+Disk Reads:   15
+Disk Writes:  24
+Time (ms):    69.0
+
+Filename:     text
+Cache Hits:   185432
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    62.0
+
+Filename:     text
+Cache Hits:   185416
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    81.0
+
+Filename:     text
+Cache Hits:   185314
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    84.0
+
+Filename:     text
+Cache Hits:   167424
+Cache Misses: 24
+Disk Reads:   9
+Disk Writes:  15
+Time (ms):    81.0
+
+Filename:     text
+Cache Hits:   167072
+Cache Misses: 24
+Disk Reads:   9
+Disk Writes:  15
+Time (ms):    61.0
+
+Filename:     text
+Cache Hits:   167340
+Cache Misses: 24
+Disk Reads:   9
+Disk Writes:  15
+Time (ms):    93.0
+
+Filename:     text
+Cache Hits:   185336
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    82.0
+
+Filename:     text
+Cache Hits:   185426
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    72.0
+
+Filename:     text
+Cache Hits:   185664
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  0
+Time (ms):    69.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    304.0
+
+Filename:     text
+Cache Hits:   38267
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    31.0
+
+Filename:     text
+Cache Hits:   38261
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    23.0
+
+Filename:     text
+Cache Hits:   38231
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    36.0
+
+Filename:     text
+Cache Hits:   38269
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    179.0
+
+Filename:     text
+Cache Hits:   38327
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    24.0
+
+Filename:     text
+Cache Hits:   38253
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    28.0
+
+Filename:     text
+Cache Hits:   38261
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    27.0
+
+Filename:     text
+Cache Hits:   38129
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    24.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    124.0
+
+Filename:     text
+Cache Hits:   38271
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    23.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    339.0
+
+Filename:     text
+Cache Hits:   38347
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    25.0
+
+Filename:     text
+Cache Hits:   38373
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    25.0
+
+Filename:     text
+Cache Hits:   38205
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    26.0
+
+Filename:     text
+Cache Hits:   38243
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    30.0
+
+Filename:     text
+Cache Hits:   38283
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    27.0
+
+Filename:     text
+Cache Hits:   38319
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    21.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    22.0
+
+Filename:     text
+Cache Hits:   2045
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    123.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    23.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    18.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    21.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    23.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    21.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    21.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    22.0
+
+Filename:     text
+Cache Hits:   20479
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    31.0
+
+Filename:     text
+Cache Hits:   38161
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    37.0
+
+Filename:     text
+Cache Hits:   38259
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    30.0
+
+Filename:     text
+Cache Hits:   12303
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    135.0
+
+Filename:     text
+Cache Hits:   38267
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    27.0
+
+Filename:     text
+Cache Hits:   38263
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   38139
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    34.0
+
+Filename:     text
+Cache Hits:   12285
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    164.0
+
+Filename:     text
+Cache Hits:   38311
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    25.0
+
+Filename:     text
+Cache Hits:   38341
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    25.0
+
+Filename:     text
+Cache Hits:   25520
+Cache Misses: 89020
+Disk Reads:   43965
+Disk Writes:  45055
+Time (ms):    292.0
+
+Filename:     text
+Cache Hits:   74064
+Cache Misses: 5022
+Disk Reads:   3005
+Disk Writes:  2017
+Time (ms):    77.0
+
+Filename:     text
+Cache Hits:   83589
+Cache Misses: 11
+Disk Reads:   5
+Disk Writes:  6
+Time (ms):    54.0
+
+Filename:     text
+Cache Hits:   74212
+Cache Misses: 5031
+Disk Reads:   3011
+Disk Writes:  2020
+Time (ms):    75.0
+
+Filename:     text
+Cache Hits:   120144
+Cache Misses: 143
+Disk Reads:   47
+Disk Writes:  96
+Time (ms):    82.0
+
+Filename:     text
+Cache Hits:   126957
+Cache Misses: 18
+Disk Reads:   7
+Disk Writes:  11
+Time (ms):    73.0
+
+Filename:     text
+Cache Hits:   134809
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    68.0
+
+Filename:     text
+Cache Hits:   134725
+Cache Misses: 6
+Disk Reads:   6
+Disk Writes:  0
+Time (ms):    63.0
+
+Filename:     text
+Cache Hits:   38253
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    31.0
+
+Filename:     text
+Cache Hits:   38307
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    26.0
+
+Filename:     text
+Cache Hits:   38299
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    38.0
+
+Filename:     text
+Cache Hits:   38189
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    23.0
+
+Filename:     text
+Cache Hits:   38313
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    29.0
+
+Filename:     text
+Cache Hits:   19781
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    202.0
+
+Filename:     text
+Cache Hits:   81672
+Cache Misses: 4998
+Disk Reads:   4998
+Disk Writes:  2009
+Time (ms):    91.0
+
+Filename:     text
+Cache Hits:   40625
+Cache Misses: 89047
+Disk Reads:   89047
+Disk Writes:  45055
+Time (ms):    417.0
+
+Filename:     text
+Cache Hits:   81704
+Cache Misses: 5019
+Disk Reads:   5019
+Disk Writes:  2016
+Time (ms):    96.0
+
+Filename:     text
+Cache Hits:   84687
+Cache Misses: 11
+Disk Reads:   11
+Disk Writes:  6
+Time (ms):    58.0
+
+Filename:     text
+Cache Hits:   84556
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    46.0
+
+Filename:     text
+Cache Hits:   84556
+Cache Misses: 4
+Disk Reads:   4
+Disk Writes:  0
+Time (ms):    42.0
+
+Filename:     text
+Cache Hits:   58595
+Cache Misses: 147797
+Disk Reads:   147797
+Disk Writes:  71679
+Time (ms):    634.0
+
+Filename:     text
+Cache Hits:   124101
+Cache Misses: 17439
+Disk Reads:   17439
+Disk Writes:  7010
+Time (ms):    150.0
+
+Filename:     text
+Cache Hits:   134476
+Cache Misses: 151
+Disk Reads:   151
+Disk Writes:  100
+Time (ms):    71.0
+
+Filename:     text
+Cache Hits:   134671
+Cache Misses: 148
+Disk Reads:   148
+Disk Writes:  98
+Time (ms):    73.0
+
+Filename:     text
+Cache Hits:   134585
+Cache Misses: 18
+Disk Reads:   18
+Disk Writes:  11
+Time (ms):    54.0
+
+Filename:     text
+Cache Hits:   239528
+Cache Misses: 31
+Disk Reads:   31
+Disk Writes:  18
+Time (ms):    91.0
+
+Filename:     text
+Cache Hits:   239320
+Cache Misses: 29
+Disk Reads:   29
+Disk Writes:  16
+Time (ms):    82.0
+
+Filename:     text
+Cache Hits:   239613
+Cache Misses: 20
+Disk Reads:   20
+Disk Writes:  12
+Time (ms):    85.0
+
+Filename:     text
+Cache Hits:   239356
+Cache Misses: 15
+Disk Reads:   15
+Disk Writes:  6
+Time (ms):    79.0
+
+Filename:     text
+Cache Hits:   239473
+Cache Misses: 10
+Disk Reads:   10
+Disk Writes:  0
+Time (ms):    81.0
+
+Filename:     text
+Cache Hits:   239421
+Cache Misses: 10
+Disk Reads:   10
+Disk Writes:  0
+Time (ms):    90.0
+
+Filename:     text
+Cache Hits:   98550
+Cache Misses: 267940
+Disk Reads:   267940
+Disk Writes:  126975
+Time (ms):    1162.0
+
+Filename:     text
+Cache Hits:   215540
+Cache Misses: 40112
+Disk Reads:   40112
+Disk Writes:  16115
+Time (ms):    220.0
+
+Filename:     text
+Cache Hits:   239287
+Cache Misses: 316
+Disk Reads:   316
+Disk Writes:  202
+Time (ms):    78.0
+
+Filename:     text
+Cache Hits:   239638
+Cache Misses: 57
+Disk Reads:   57
+Disk Writes:  33
+Time (ms):    82.0
+
+Filename:     text
+Cache Hits:   239294
+Cache Misses: 43
+Disk Reads:   43
+Disk Writes:  28
+Time (ms):    81.0
+
+Filename:     text
+Cache Hits:   185566
+Cache Misses: 24
+Disk Reads:   24
+Disk Writes:  15
+Time (ms):    77.0
+
+Filename:     text
+Cache Hits:   134756
+Cache Misses: 151
+Disk Reads:   151
+Disk Writes:  100
+Time (ms):    65.0
+
+Filename:     text
+Cache Hits:   293616
+Cache Misses: 36
+Disk Reads:   36
+Disk Writes:  22
+Time (ms):    87.0
+
+Filename:     text
+Cache Hits:   348520
+Cache Misses: 56
+Disk Reads:   56
+Disk Writes:  33
+Time (ms):    83.0
+
+Filename:     text
+Cache Hits:   19833
+Cache Misses: 38915
+Disk Reads:   38915
+Disk Writes:  20479
+Time (ms):    204.0
+
+Filename:     text
+Cache Hits:   12287
+Cache Misses: 38915
+Disk Reads:   18436
+Disk Writes:  20479
+Time (ms):    148.0
+
+Filename:     text
+Cache Hits:   38257
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    25.0
+
+Filename:     text
+Cache Hits:   38297
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    24.0
+
+Filename:     text
+Cache Hits:   38229
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    36.0
+
+Filename:     text
+Cache Hits:   38313
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    33.0
+
+Filename:     text
+Cache Hits:   38287
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    24.0
+
+Filename:     text
+Cache Hits:   38201
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    27.0
+
+Filename:     text
+Cache Hits:   38259
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    27.0
+
+Filename:     text
+Cache Hits:   38215
+Cache Misses: 2
+Disk Reads:   2
+Disk Writes:  0
+Time (ms):    43.0
+
+Filename:     text
+Cache Hits:   83719
+Cache Misses: 11
+Disk Reads:   5
+Disk Writes:  6
+Time (ms):    42.0
+
+Filename:     text
+Cache Hits:   51043
+Cache Misses: 198517
+Disk Reads:   100214
+Disk Writes:  98303
+Time (ms):    564.0
+
+Filename:     text
+Cache Hits:   569175
+Cache Misses: 167
+Disk Reads:   167
+Disk Writes:  91
+Time (ms):    104.0
+
+Filename:     text
+Cache Hits:   569172
+Cache Misses: 170
+Disk Reads:   170
+Disk Writes:  91
+Time (ms):    101.0
+
+Filename:     text
+Cache Hits:   569174
+Cache Misses: 168
+Disk Reads:   168
+Disk Writes:  91
+Time (ms):    115.0
+

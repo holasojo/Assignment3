@@ -1,226 +1,201 @@
-import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 
 /**
- * @author Thomas Dowey tdowey3
- * @version 2014-10-27 
- * BufferPool class - maintains data to read and write from disk
+ * Buffer pool class. Used by client to read and write to
+ * a file.
+ * 
+ * 
+ * @author sohyun
+ * @author sshumway
+ * 
  */
 public class BufferPool {
-    private static final int BLOCK_SIZE = 4096; // size of a block in bytes
-    // the disk where data is being read and written to
-    private RandomAccessFile disk;
-    private Buffer[] buffers; // the buffers that store the data
-    private int count; // the number of buffers in the buffer pool
-    /**
-     * the size of the file in bytes
-     */
-    long fileSize;
-    /**
-     * the number of times that data is read from buffers
-     */
-    long hits;
-    /**
-     * number of times data is being read from disk
-     */
-    long reads;
-    /**
-     * number of times data is being written to disk
-     */
-    long writes;
 
+    private BufferList<Buffer> pool;
+
+    private RandomAccessFile input;
+     
+
+    private final int BLOCK_SIZE = 4096;
+
+    private int hits;
+
+    private int misses;
+
+    private int reads;
+
+    private int writes;
+    
+    private long fileLen;
+  
+    private static byte[] temp2;
+    
     /**
-     * @param name - name of the file to read from
-     * @param size - size of the buffer pool
-     * @throws IOException
-     * constructor - sets up disk and variables
+     * Buffer pool constructor.  
+     * 
+     * @param newDisk The input file on disk.
+     * @param numBuffer The number of buffers allowed.
+     * @throws IOException 
      */
-    public BufferPool(RandomAccessFile name, int size) throws IOException {
-//        File aFile = new File(name);
-//        file = new RandomAccessFile(aFile, "rw");
-        disk = name;
-        buffers = new Buffer[size];
-        count = 0;
-        fileSize = disk.length();
+    public BufferPool(RandomAccessFile newDisk, int numBuffer) throws IOException {
+        
+        pool = new BufferList<Buffer>(numBuffer);
+        input = newDisk;
         hits = 0;
+        misses = 0;
         reads = 0;
         writes = 0;
-    }
-
-    /**
-     * @param space - the data to insert to the buffer pool
-     * @param sz - size of the data to be inserted
-     * @param pos - position to insert to
-     * @throws IOException
-     * Copy "sz" bytes from "space" to position "pos" in the
-     * buffered storage
-     */
- 
-    public void insert(byte[] space, int sz, int pos, RandomAccessFile disk) throws IOException {
-        // the block number where the data needs to be inserted
-        int block = pos / BLOCK_SIZE;
-        // the position within the block where the data needs to be inserted
-        int blockPos = pos % BLOCK_SIZE;
-        // the location of the block within the buffer
-        int bufferPos = 0;
-        // temporary Buffer variable that stores buffer to be moved up front
-        Buffer temp = null;
-        for (int i = 0; i < count; i++)// checks all buffers
-        {
-            if (buffers[i].number == block && buffers[i].getDisk() == disk)// if we found the buffer
-            {
-                // make changes within the buffer
-                buffers[i].markDirty(space, blockPos);
-                temp = buffers[i]; // set temp to that buffer
-                hits++; // increment cache Count
-                break; // done with for loop
-            }
-            else
-            {
-                //increment position of the buffer
-                bufferPos++;
-            }
+        temp2 = new byte[4];
+        fileLen = newDisk.length();
+        
+        //Initializes the buffers in the pool.
+        for (int i = 0; i < numBuffer; i++) {
+            pool.append(new Buffer(-1, BLOCK_SIZE, null));
         }
         
-        if (temp == null) // if the block is currently not in the buffer
-        {
-            // create new data array
-            byte[] data = new byte[BLOCK_SIZE];
-            // retrieve data from the disk
-            disk.seek(block * BLOCK_SIZE);
-            disk.read(data, 0, BLOCK_SIZE);
-            reads++; // increment disk read count
-            // create new Buffer
-            temp = new Buffer(block, data, disk);
-            // make changes within the buffer
-            temp.markDirty(space, blockPos);
-            // if the array is not full, increase the counter
-            if (count < buffers.length) {
-                count++;
-            }
-        }
+        //System.out.println(pool.length());
 
-        // if the buffer pool is full
-        if (bufferPos == buffers.length ) {
-            // if there were changes made to the data
-            if (buffers[count - 1].isDirty) {
-                // write data onto the disk
-                disk.seek(buffers[count - 1].number * BLOCK_SIZE);
-                disk.write(buffers[count - 1].buff, 0, BLOCK_SIZE);
-                writes++; // increment disk write count
-            }
-            // lower buffer position so it can go through
-            bufferPos--;
-        }
-
-        // moves all buffers to the left of bufferPos to the right
-        for (int i = bufferPos; i > 0; i--) {
-            buffers[i] = buffers[i - 1];
-        }
-        // add in temporary buffer to the front of array
-        buffers[0] = temp;
+        
     }
 
+    
     /**
-     * @param space - the space to write data to
-     * @param sz - size of data to get
-     * @param pos - position to retrieve data from
+     * Inserts  sz bytes from space into position
+     * pos in the buffer pool.
+     * 
+     * @param space The data to be copied.
+     * @param sz The number of bytes.
+     * @param pos The position of the bytes in the file.
+     * @param disk The parent file of the data.
      * @throws IOException
-     * Copy "sz" bytes from position "pos" of the buffered storage
-     * to "space"
      */
+    public void insert(byte[] space, int sz, int pos, RandomAccessFile disk) throws IOException {
+        int blockID = pos / BLOCK_SIZE;
+        int poolIndex = this.bufferAt(blockID, disk);
 
-    public void getbytes(byte[] space, int sz, int pos, RandomAccessFile disk) throws IOException {
-        // the block number where the data needs to be inserted
-        int block = pos / BLOCK_SIZE;
-        // the position within the block where the data needs to be inserted
-        int blockPos = pos % BLOCK_SIZE;
-        // the location of the block within the buffer
-        int bufferPos = 0;
-        // temporary Buffer variable that stores buffer to be moved up front
-        Buffer temp = null;
-        for (int i = 0; i < count; i++) // checks all buffers
-        {
-            if (buffers[i].number == block && buffers[i].getDisk() == disk) // if we found the buffer
-            {
-                // get the data from the buffer
-                byte[] returnedValue = buffers[i].getData(blockPos, sz);
-                for (int j = 0; j < sz; j++) // add it to space
-                {
-                    space[j] = returnedValue[j];
-                }
-                // set temp to that buffer
-                temp = buffers[i];
-                hits++;
-                break; // done with for loop
-            } 
-            else 
-            {
-                // increment buffer position
-                bufferPos++;
-            }
+        // if buffer was not in the buffer pool
+        if (poolIndex < 0) {
+            this.getbytes(temp2, sz, pos, disk);
+            poolIndex = this.bufferAt(blockID, disk);
+
         }
+        else {
+            pool.moveToPos(poolIndex);
+            hits++;
+            pool.promote(poolIndex);
+        }
+                         
+        System.arraycopy(space, 0, pool.getValue().getBuffer(), pos % BLOCK_SIZE , sz);
+        
+        pool.getValue().setDirty(true);
+        pool.getValue().setFile(disk);
+    }
 
-        if (temp == null) // if the block is currently not in the buffer
-        {
-            // create new data array
-            byte[] data = new byte[BLOCK_SIZE];
-            // retrieve data from the disk
-            disk.seek(block * BLOCK_SIZE);
-            disk.read(data, 0, BLOCK_SIZE);
+    
+    /**
+     * Copies sz bytes from position pos in the buffer pool
+     * to the byte array space.
+     * 
+     * @param space The container for the data.
+     * @param sz The number of bytes
+     * @param pos The position in the buffer pool.
+     * @param disk The parent file of the desired data.
+     * @throws IOException
+     */
+    public void getbytes(byte[] space, int sz, int pos, RandomAccessFile disk)
+            throws IOException {
+        int blockID = pos / BLOCK_SIZE;
+        int poolIndex = this.bufferAt(blockID, disk);
+
+        // if buffer is not in the pool
+        if (poolIndex < 0) {
+            pool.moveToEnd();
+            // value in buffer has changed, write to file
+            if (pool.getValue().isDirty()) {
+                // seeks and writes to file
+               
+                    pool.getValue().getFile().seek(
+                            pool.getValue().getID() * BLOCK_SIZE);
+                    pool.getValue().getFile().write(pool.getValue().getBuffer());
+                    writes++;
+                
+
+            }
+            // seeks and reads new block from file to buffer pool
+
+            // moves to correct position in file
+            disk.seek(blockID * BLOCK_SIZE);
+            // overwrites LRU block with new block values from file
+            disk.read(pool.getValue().getBuffer(), 0, BLOCK_SIZE); //changed to read directly into buffer
+            //pool.getValue().setBuffer(temp.clone());
             reads++;
-            // create new Buffer
-            temp = new Buffer(block, data, disk);
-            // get the data from the buffer
-            byte[] returnedValue = temp.getData(blockPos, sz);
-            for (int j = 0; j < sz; j++) // add it to space
-            {
-                space[j] = returnedValue[j];
-            }
-            // if the array is not full, increase the counter
-            if (count < buffers.length) {
-                count++;
-            }
+
+            pool.getValue().setID(blockID);
+            pool.getValue().setDirty(false);
+            pool.getValue().setFile(disk);
+            pool.promote(pool.currPos());
+            misses++;
+
+        }
+        else {
+            pool.promote(poolIndex);
+            hits++;
         }
 
-        // if the buffer pool is full
-        if (bufferPos == buffers.length) {
-            // if there were changes made to the data
-            if (buffers[count - 1].isDirty) {
-                // write data onto the disk
-                disk.seek(buffers[count - 1].number * BLOCK_SIZE);
-                disk.write(buffers[count - 1].buff, 0, BLOCK_SIZE);
-                writes++;
-            }
-            // lower buffer position so it can go through
-            bufferPos--;
-        }
+        // gets desired bytes from buffer pool
+        int startingByteInBlock = pos % BLOCK_SIZE;
+        pool.moveToStart();
+        
+        System.arraycopy(pool.getValue().getBuffer(), startingByteInBlock, space, 0, sz);
+        
 
-        // moves all buffers to the left of bufferPos to the right
-        for (int i = bufferPos; i > 0; i--) {
-            buffers[i] = buffers[i - 1];
-        }
-        // add in temporary buffer to the front of array
-        buffers[0] = temp;
     }
 
     /**
-     * @throws IOException
-     *             flushAll - write all remaining buffers to disk once the
-     *             quicksort is done
+     * flushes all values from cache to disk
+     * @throws IOException 
      */
     public void flush() throws IOException {
-        for (int i = 0; i < count; i++) {
-            if (buffers[i].isDirty) {
-                disk.seek(buffers[i].number * BLOCK_SIZE);
-                disk.write(buffers[i].buff, 0, BLOCK_SIZE);
-                writes++;
+        pool.moveToStart();
+        for (int i = 0; i < pool.length(); pool.moveToPos(++i)) { //changed to ++i
+            if (pool.getValue().isDirty()) {
+
+                input.seek(pool.getValue().getID() * BLOCK_SIZE);
+                input.write(pool.getValue().getBuffer());
+
             }
         }
     }
-    public long fileLength(){
-        return fileSize;
+
+    /**
+     * Determines if the desired buffer block is in the BufferPool
+     * 
+     * @param blockNumber
+     *            block number you are looking for
+     * @param file The file that the desired buffer's data 
+     * belongs to.
+     * @return location in the pool
+     */
+    private int bufferAt(int blockNumber, RandomAccessFile file) {
+        pool.moveToStart();
+        for (int i = 0; i < pool.length(); i++) {
+            if (blockNumber == pool.getValue().getID() &&  pool.getValue().getFile() == file) {
+                return i;
+            }
+            pool.next();
+        }
+        return -1;
+    }
+
+    /**
+     * Determines length of file
+     * @return file length.
+     * @throws IOException
+     */
+    public long fileLength() throws IOException{
+        return fileLen;
     }
     
     /**
@@ -228,7 +203,7 @@ public class BufferPool {
      * buffer pool.
      * @return hits.
      */
-    public long getCacheHits() {
+    public int getCacheHits() {
         return hits;
     }
     
@@ -236,15 +211,17 @@ public class BufferPool {
      * Number of times disk was read.
      * @return number of reads.
      */
-    public long getDiskReads() {
+    public int getDiskReads() {
+        
         return reads;
+        
     }
 
     /**
      * Getter for disk writes
      * @return number of writes.
      */
-    public long getDiskWrites() {
+    public int getDiskWrites() {
         return writes;
     }
    
@@ -252,7 +229,19 @@ public class BufferPool {
      * Getter for pool misses
      * @return misses
      */
-    public long getCacheMisses() {
-        return -1;
+    public int getCacheMisses() {
+        return misses;
     }
+
+    /**
+     * String representation of 
+     * the pool. Used for testing.
+     * @return String rep.
+     */
+    public String toString() {
+        
+        return pool.toString();
+        
+    }
+    
 }

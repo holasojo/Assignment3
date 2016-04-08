@@ -10,7 +10,6 @@ public class Processor {
     private String statFile;
     private String tempFile;
     private int buffNum;
-    private BufferPool pool;
     private RandomAccessFile dataAccess;
     private RandomAccessFile tempFileAccess;
     
@@ -18,20 +17,20 @@ public class Processor {
     public Processor(String data, String stat, int buff) throws FileNotFoundException{
         dataFile = data;
         statFile = stat;
-        tempFile = "temp";
+        tempFile = "temp.txt";
         buffNum = buff;
         dataAccess = new RandomAccessFile(dataFile, "rw");
         tempFileAccess = new RandomAccessFile(tempFile, "rw");
         
     }
     
-    public void run() throws IOException{
+    public void run() throws IOException {
 
         BufferPool pool = new BufferPool(dataAccess, buffNum);
         BufferSort sorter = new BufferSort(pool);
 
         long begin = System.currentTimeMillis();
-        sorter.mergeSort(dataAccess, tempFileAccess);
+        sorter.mergeSortHelp(dataAccess, tempFileAccess, 0, (int)(pool.fileLength()/4 - 1));
         pool.flush();
         long end = System.currentTimeMillis();
         double timetaken = (double) end-begin;

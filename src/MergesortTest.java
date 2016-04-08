@@ -20,7 +20,7 @@ public class MergesortTest
 	public void testInit() throws IOException {
 		Mergesort merge = new Mergesort();
 		assertNotNull(merge);
-//		Mergesort.main(null);
-//		assertFuzzyEquals("Hello, World", systemOut().getHistory());
+		//Mergesort.main(null);
+		//assertFuzzyEquals("Hello, World", systemOut().getHistory());
 	}
 }
