@@ -16,6 +16,9 @@ public class MergesortTest extends TestCase {
         // no op
     }
 
+    /*
+     * tests the main?
+     */
     public void testInit() throws IOException {
         Mergesort merge = new Mergesort();
         assertNotNull(merge);

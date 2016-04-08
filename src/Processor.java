@@ -1,9 +1,15 @@
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
+/**
+ * Class to process to sort files. It runs the sorting.
+ * 
+ * @author sohyun
+ * @author sshumway
+ * @version 4/07/2016
+ *
+ */
 public class Processor {
 
     private String dataFile;
@@ -13,6 +19,17 @@ public class Processor {
     private RandomAccessFile dataAccess;
     private RandomAccessFile tempFileAccess;
 
+    /**
+     * Constructor
+     * 
+     * @param data
+     *            is inputfile
+     * @param stat
+     *            is file we write Stats
+     * @param buff
+     *            is the number of buffers
+     * @throws FileNotFoundException
+     */
     public Processor(String data, String stat, int buff)
             throws FileNotFoundException {
         dataFile = data;
@@ -24,6 +41,11 @@ public class Processor {
 
     }
 
+    /**
+     * Calls Mergesort to sort. Calculates how long it takes too
+     * 
+     * @throws IOException
+     */
     public void run() throws IOException {
 
         BufferPool pool = new BufferPool(dataAccess, buffNum);
