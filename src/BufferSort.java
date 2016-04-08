@@ -83,4 +83,11 @@ public class BufferSort {
     // short keyVal = ByteBuffer.wrap(space).getShort();
     // return keyVal;
     // }
+    private short getKey(byte[] buf) throws IOException {
+//        pool.get(i * 4, buf);
+        int k = (int) buf[0] & 0xFF;
+        k <<= 8;
+        k += (int) buf[1] & 0xFF;
+        return (short) k;
+    }
 }
