@@ -1,4 +1,4 @@
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 
 /**
@@ -25,24 +25,14 @@ public class Mergesort {
 
     /**
      * The entry point of the application java Mergesort
-     * <data-file-name> <numb-buffers> <stat-file-name>
      * 
-     * @param args
+     * 
+     * @param args is <data-file-name> <numb-buffers> <stat-file-name>
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        try {
-            process = new Processor(args[0], args[2],
-                    Integer.parseInt(args[1]));
-        }
-        catch (NumberFormatException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
+        process = new Processor(args[0], args[2], Integer.parseInt(args[1]));
         process.run();
     }
 }
