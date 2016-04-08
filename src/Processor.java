@@ -30,8 +30,8 @@ public class Processor {
      *            is the number of buffers
      * @throws FileNotFoundException
      */
-    public Processor(String data, String stat, int buff)
-            throws FileNotFoundException {
+    public Processor(String data, String stat, 
+            int buff) throws FileNotFoundException {
         dataFile = data;
         statFile = stat;
         tempFile = "temp.txt";

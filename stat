@@ -1643,3 +1643,17 @@ Disk Reads:   168
 Disk Writes:  91
 Time (ms):    115.0
 
+Filename:     text
+Cache Hits:   204527
+Cache Misses: 271
+Disk Reads:   271
+Disk Writes:  59
+Time (ms):    35.0
+
+Filename:     text
+Cache Hits:   94198
+Cache Misses: 8
+Disk Reads:   8
+Disk Writes:  3
+Time (ms):    45.0
+

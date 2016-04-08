@@ -25,7 +25,7 @@ public class BufferSortTest extends student.TestCase {
      */
     public void test1() throws Exception {
 
-        String[] str1 = { "-a", "text", "10" };
+        String[] str1 = { "-a", "text", "2" };
         generate.generateFile(str1);
         String[] str2 = { "text", "4", "stat" };
         Mergesort.main(str2);

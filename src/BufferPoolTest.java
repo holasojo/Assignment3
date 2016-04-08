@@ -8,9 +8,18 @@ import junit.framework.TestCase;
  * 
  * Test the bufferpool
  * 
+ * @author sohyun
+ * @author sshumway
+ * @version 04/07/2017
+ * 
  */
 public class BufferPoolTest extends TestCase {
 
+    /**
+     * Create two bytes[] and compare.
+     * 
+     * @throws IOException
+     */
     public void testBuffer() throws IOException {
         RandomAccessFile file = new RandomAccessFile("test", "rw");
         byte[] byte1 = new byte[20];

@@ -40,8 +40,8 @@ public class BufferPool {
      *            The number of buffers allowed.
      * @throws IOException
      */
-    public BufferPool(RandomAccessFile newDisk, int numBuffer)
-            throws IOException {
+    public BufferPool(RandomAccessFile newDisk, 
+            int numBuffer) throws IOException {
 
         pool = new BufferList<Buffer>(numBuffer);
         input = newDisk;
@@ -73,8 +73,8 @@ public class BufferPool {
      *            The parent file of the data.
      * @throws IOException
      */
-    public void insert(byte[] space, int sz, int pos, RandomAccessFile disk)
-            throws IOException {
+    public void insert(byte[] space, int sz, int pos, 
+            RandomAccessFile disk) throws IOException {
         int blockID = pos / blockSize;
         int poolIndex = this.bufferAt(blockID, disk);
 
@@ -111,8 +111,8 @@ public class BufferPool {
      *            The parent file of the desired data.
      * @throws IOException
      */
-    public void getbytes(byte[] space, int sz, int pos, RandomAccessFile disk)
-            throws IOException {
+    public void getbytes(byte[] space, int sz, int pos, 
+            RandomAccessFile disk) throws IOException {
         int blockID = pos / blockSize;
         int poolIndex = this.bufferAt(blockID, disk);
 
