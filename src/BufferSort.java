@@ -103,11 +103,8 @@ public class BufferSort {
             else {
 
                 if (getKey(buf) <= getKey(buf2)) {
-
                     pool.insert(buf, 4, curr << 2, inputfile);
-
                     i1++;
-
                     pool.getbytes(buf, 4, i1 << 2, tempfile);
 
                 }
