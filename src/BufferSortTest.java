@@ -9,7 +9,6 @@ public class BufferSortTest extends student.TestCase {
 
     private FileGenerator generate;
     private CheckFile check;
-    private String[] args;
 
     /**
      * set up
@@ -17,7 +16,6 @@ public class BufferSortTest extends student.TestCase {
     public void setUp() {
         generate = new FileGenerator();
         check = new CheckFile();
-        args = new String[3];
 
     }
 

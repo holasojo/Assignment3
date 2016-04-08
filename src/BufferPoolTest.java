@@ -6,12 +6,12 @@ import junit.framework.TestCase;
 
 /**
  * 
-
+ * Test the bufferpool
  * 
  */
 public class BufferPoolTest extends TestCase {
 
-    public void testBufferAlterations() throws IOException {
+    public void testBuffer() throws IOException {
         RandomAccessFile file = new RandomAccessFile("test", "rw");
         byte[] byte1 = new byte[20];
         for (int j = 0; j < 20; j++) {
@@ -28,8 +28,7 @@ public class BufferPoolTest extends TestCase {
         System.out.println(byte1[8]);
         System.out.println(byte2[8]);
 
-//        assertEquals(byte1[9], byte2[9]);
+        // assertEquals(byte1[9], byte2[9]);
     }
-
 
 }
