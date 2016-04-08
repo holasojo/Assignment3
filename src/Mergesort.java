@@ -22,17 +22,18 @@ import java.io.IOException;
 public class Mergesort {
 
     private static Processor process;
+
     /**
-     * The entry point of the application 
-     * java Mergesort
+     * The entry point of the application java Mergesort
      * <data-file-name> <numb-buffers> <stat-file-name>
      * 
      * @param args
-     * @throws IOException 
+     * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         try {
-            process = new Processor(args[0], args[2], Integer.parseInt(args[1]));
+            process = new Processor(args[0], args[2],
+                    Integer.parseInt(args[1]));
         }
         catch (NumberFormatException e) {
             // TODO Auto-generated catch block
