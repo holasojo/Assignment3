@@ -31,7 +31,7 @@ public class BufferPoolTest extends TestCase
         System.out.println(byte1[8]);
         System.out.println(byte2[8]);
         
-//        assertEquals( byte1[9], byte2[9] );
+        assertEquals( byte1[9], byte2[9] );
     }
 
 //   

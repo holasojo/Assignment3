@@ -2,22 +2,52 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 
+/**
+ * This class contains the implementation for mergesort that runs on a binary
+ * file, and utilizes a buffer pool to interact with the file.
+ * 
+ * @author sshumway
+ * @author sohyun
+ * @version 4/7/16
+ *
+ */
 public class BufferSort {
 
     private byte[] buf;
     private byte[] buf2;
     private BufferPool pool;
-    private long arrayLength;
+    // private long arrayLength;
 
+    /**
+     * Constructor for Mergesort class.
+     * 
+     * @param thePool
+     *            The buffer pool that mediates file access.
+     * @throws IOException
+     */
     public BufferSort(BufferPool thePool) throws IOException {
 
         buf = new byte[4];
         buf2 = new byte[4];
         pool = thePool;
-        arrayLength = pool.fileLength() / 4;
+        // arrayLength = pool.fileLength() / 4;
 
     }
 
+    /**
+     * The mergesort algorithm. Uses an input file and a temporary file as the
+     * logical arrays used by mergesort.
+     * 
+     * @param inputfile
+     *            The sourcefile to be sorted.
+     * @param tempfile
+     *            The second "array"
+     * @param left
+     *            The left index
+     * @param right
+     *            The right index
+     * @throws IOException
+     */
     public void mergeSortHelp(RandomAccessFile inputfile,
             RandomAccessFile tempfile, int left, int right) throws IOException {
         if (left == right) {
@@ -39,32 +69,57 @@ public class BufferSort {
         int i1 = left;
         int i2 = mid + 1;
         pool.getbytes(buf, 4, i1 << 2, tempfile);
+
         pool.getbytes(buf2, 4, i2 << 2, tempfile);
 
         for (int curr = left; curr <= right; curr++) {
+
+            // pool.getbytes(buf, 4, i1 << 2, tempfile);
+
+            // pool.getbytes(buf2, 4, i2 << 2, tempfile);
+
             if (i1 == mid + 1) // Left sublist exhausted
+
             {
+
                 pool.insert(buf2, 4, curr << 2, inputfile);
+
                 i2++;
+
+                // if (curr + 1 <= right)
+
                 pool.getbytes(buf2, 4, i2 << 2, tempfile);
+
             }
+
             else if (i2 > right) {
+
                 pool.insert(buf, 4, curr << 2, inputfile);
                 i1++;
                 pool.getbytes(buf, 4, i1 << 2, tempfile);
+
             }
+
             else {
-//                short key1 = ByteBuffer.wrap(buf).getShort();
-//                short key2 = ByteBuffer.wrap(buf2).getShort();
+
                 if (getKey(buf) <= getKey(buf2)) {
+
                     pool.insert(buf, 4, curr << 2, inputfile);
+
                     i1++;
+
                     pool.getbytes(buf, 4, i1 << 2, tempfile);
+
                 }
+
                 else {
+
                     pool.insert(buf2, 4, curr << 2, inputfile);
+
                     i2++;
+
                     pool.getbytes(buf2, 4, i2 << 2, tempfile);
+
                 }
 
             }
@@ -72,22 +127,20 @@ public class BufferSort {
 
     }
 
-    public void mergeSort(RandomAccessFile inputfile, RandomAccessFile tempfile)
-            throws IOException {
-        mergeSortHelp(inputfile, tempfile, 0, (int) (arrayLength - 1));
-    }
+    /**
+     * Uses bitwise operators to obtain 2 byte keyValue from a record.
+     * 
+     * @param record
+     *            The byte record
+     * @return The key value.
+     * @throws IOException
+     */
+    private short getKey(byte[] record) throws IOException {
 
-    // private short getKey(byte[] space, int sz, int pos, RandomAccessFile
-    // file) throws IOException {
-    // pool.getbytes(space, sz, pos, file);
-    // short keyVal = ByteBuffer.wrap(space).getShort();
-    // return keyVal;
-    // }
-    private short getKey(byte[] buf) throws IOException {
-//        pool.get(i * 4, buf);
-        int k = (int) buf[0] & 0xFF;
+        int k = (int) record[0] & 0xFF;
         k <<= 8;
-        k += (int) buf[1] & 0xFF;
+        k += (int) record[1] & 0xFF;
         return (short) k;
     }
+
 }

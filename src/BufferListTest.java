@@ -8,21 +8,25 @@
  *
  */
 public class BufferListTest extends student.TestCase {
-    
+
     private BufferList<Integer> pool;
-    
-    public void setUp()
-    {
-        
+
+    /**
+     * Sets up the test fixture.
+     */
+    public void setUp() {
+
         pool = new BufferList<Integer>(15);
-        
+
         for (int i = 0; i < 15; i++) {
             pool.append(i);
         }
     }
-    
-    public void testTraversal()
-    {
+
+    /**
+     * Tests functions that traverse and move list elements around.
+     */
+    public void testTraversal() {
         pool.moveToStart();
         assertEquals(pool.getValue().intValue(), 0);
         pool.moveToEnd();
@@ -30,46 +34,50 @@ public class BufferListTest extends student.TestCase {
         pool.insert(4);
         assertEquals(4, pool.getValue().intValue());
         pool.remove();
-        pool.insert(7);;
-        
-        //System.out.println(pool.toString());
-        
-        
+        pool.insert(7);
+        pool.clear();
+
     }
-    
-    public void testPromote()
-    {
-        
+
+    /**
+     * Tests the promote method, which moves the element at the passed index to
+     * the front of the list.
+     * 
+     */
+    public void testPromote() {
+
         for (int i = 0; i < 15; i++) {
             pool.promote(14);
         }
-        
-        System.out.println(pool.toString());
-        
+
+        // System.out.println(pool.toString());
+
         pool.promote(pool.length() - 1);
-        System.out.println(pool.toString());
+        // System.out.println(pool.toString());
         pool.promote(1);
-        System.out.println(pool.toString());
+        // System.out.println(pool.toString());
         assertEquals(0, pool.getValue().intValue());
-        
+
     }
-    
-    public void testRemove()
-    {
+
+    /**
+     * Tests the remove method to make sure it properly shifts the list
+     * elements.
+     */
+    public void testRemove() {
         pool.moveToPos(17);
         assertNull(pool.remove());
         pool.moveToPos(-2);
         assertNull(pool.remove());
-        
+
         pool.moveToPos(pool.length() - 1);
         pool.remove();
-        
+
         pool.moveToPos(3);
-        //System.out.println(pool.toString());
+        // System.out.println(pool.toString());
         pool.remove();
-        //System.out.println(pool.toString());
-        
-        
+        // System.out.println(pool.toString());
+
         pool.moveToPos(0);
         pool.prev();
         pool.next();

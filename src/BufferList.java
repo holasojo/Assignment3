@@ -166,7 +166,8 @@ class BufferList<E> {
     /**
      * Moves curr to desired position.
      * 
-     * @param pos The position to move to.
+     * @param pos
+     *            The position to move to.
      */
     public void moveToPos(int pos) {
         curr = pos;
@@ -181,35 +182,4 @@ class BufferList<E> {
         return listArray[curr];
     }
 
-    /**
-     * Generate a human-readable representation of this list's contents that
-     * looks something like this: < 1 2 3 | 4 5 6 >. The vertical bar represents
-     * the current location of the fence. This method uses toString() on the
-     * individual elements.
-     * 
-     * @return The string representation of this list
-     */
-    public String toString() {
-        // Save the current position of the list
-        int oldPos = currPos();
-        int length = length();
-        StringBuffer out = new StringBuffer((length() + 1) * 4);
-
-        moveToStart();
-        out.append("< ");
-        for (int i = 0; i < oldPos; i++) {
-            out.append(getValue());
-            out.append(" ");
-            next();
-        }
-        out.append("| ");
-        for (int i = oldPos; i < length; i++) {
-            out.append(getValue());
-            out.append(" ");
-            next();
-        }
-        out.append(">");
-        moveToPos(oldPos); // Reset the fence to its original position
-        return out.toString();
-    }
 }

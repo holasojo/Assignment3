@@ -9,6 +9,7 @@ import java.nio.ByteBuffer;
  * 
  * @author sohyun
  * @author sshumway
+ * @version 4/7/16
  * 
  */
 public class BufferPool {
@@ -18,7 +19,7 @@ public class BufferPool {
     private RandomAccessFile input;
      
 
-    private final int BLOCK_SIZE = 4096;
+    private int blockSize;
 
     private int hits;
 
@@ -49,10 +50,11 @@ public class BufferPool {
         writes = 0;
         temp2 = new byte[4];
         fileLen = newDisk.length();
+        blockSize = 4096;
         
         //Initializes the buffers in the pool.
         for (int i = 0; i < numBuffer; i++) {
-            pool.append(new Buffer(-1, BLOCK_SIZE, null));
+            pool.append(new Buffer(-1, blockSize, null));
         }
         
         //System.out.println(pool.length());
@@ -71,8 +73,9 @@ public class BufferPool {
      * @param disk The parent file of the data.
      * @throws IOException
      */
-    public void insert(byte[] space, int sz, int pos, RandomAccessFile disk) throws IOException {
-        int blockID = pos / BLOCK_SIZE;
+    public void insert(byte[] space, int sz, int pos, RandomAccessFile disk) 
+      throws IOException {
+        int blockID = pos / blockSize;
         int poolIndex = this.bufferAt(blockID, disk);
 
         // if buffer was not in the buffer pool
@@ -87,7 +90,8 @@ public class BufferPool {
             pool.promote(poolIndex);
         }
                          
-        System.arraycopy(space, 0, pool.getValue().getBuffer(), pos % BLOCK_SIZE , sz);
+        System.arraycopy(space, 0, pool.getValue().getBuffer(), 
+                pos % blockSize , sz);
         
         pool.getValue().setDirty(true);
         pool.getValue().setFile(disk);
@@ -105,8 +109,8 @@ public class BufferPool {
      * @throws IOException
      */
     public void getbytes(byte[] space, int sz, int pos, RandomAccessFile disk)
-            throws IOException {
-        int blockID = pos / BLOCK_SIZE;
+      throws IOException {
+        int blockID = pos / blockSize;
         int poolIndex = this.bufferAt(blockID, disk);
 
         // if buffer is not in the pool
@@ -117,7 +121,7 @@ public class BufferPool {
                 // seeks and writes to file
                
                     pool.getValue().getFile().seek(
-                            pool.getValue().getID() * BLOCK_SIZE);
+                            pool.getValue().getID() * blockSize);
                     pool.getValue().getFile().write(pool.getValue().getBuffer());
                     writes++;
                 
@@ -126,10 +130,9 @@ public class BufferPool {
             // seeks and reads new block from file to buffer pool
 
             // moves to correct position in file
-            disk.seek(blockID * BLOCK_SIZE);
+            disk.seek(blockID * blockSize);
             // overwrites LRU block with new block values from file
-            disk.read(pool.getValue().getBuffer(), 0, BLOCK_SIZE); 
-            //changed to read directly into buffer
+            disk.read(pool.getValue().getBuffer(), 0, blockSize); //changed to read directly into buffer
             //pool.getValue().setBuffer(temp.clone());
             reads++;
 
@@ -146,7 +149,7 @@ public class BufferPool {
         }
 
         // gets desired bytes from buffer pool
-        int startingByteInBlock = pos % BLOCK_SIZE;
+        int startingByteInBlock = pos % blockSize;
         pool.moveToStart();
         
         System.arraycopy(pool.getValue().getBuffer(), startingByteInBlock, space, 0, sz);
@@ -163,7 +166,7 @@ public class BufferPool {
         for (int i = 0; i < pool.length(); pool.moveToPos(++i)) { //changed to ++i
             if (pool.getValue().isDirty()) {
 
-                input.seek(pool.getValue().getID() * BLOCK_SIZE);
+                input.seek(pool.getValue().getID() * blockSize);
                 input.write(pool.getValue().getBuffer());
 
             }
@@ -234,15 +237,5 @@ public class BufferPool {
         return misses;
     }
 
-    /**
-     * String representation of 
-     * the pool. Used for testing.
-     * @return String rep.
-     */
-    public String toString() {
-        
-        return pool.toString();
-        
-    }
     
 }
