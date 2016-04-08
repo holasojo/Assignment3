@@ -58,8 +58,6 @@ public class BufferPool {
             pool.append(new Buffer(-1, blockSize, null));
         }
 
-        // System.out.println(pool.length());
-
     }
 
     /**
