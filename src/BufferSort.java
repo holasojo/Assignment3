@@ -39,45 +39,24 @@ public class BufferSort {
         int i1 = left;
         int i2 = mid + 1;
         pool.getbytes(buf, 4, i1 << 2, tempfile);
-
         pool.getbytes(buf2, 4, i2 << 2, tempfile);
 
         for (int curr = left; curr <= right; curr++) {
-
-            // pool.getbytes(buf, 4, i1 << 2, tempfile);
-
-            // pool.getbytes(buf2, 4, i2 << 2, tempfile);
-
             if (i1 == mid + 1) // Left sublist exhausted
-
             {
-
                 pool.insert(buf2, 4, curr << 2, inputfile);
-
                 i2++;
-
-                // if (curr + 1 <= right)
-
                 pool.getbytes(buf2, 4, i2 << 2, tempfile);
-
             }
-
             else if (i2 > right) {
-
                 pool.insert(buf, 4, curr << 2, inputfile);
                 i1++;
                 pool.getbytes(buf, 4, i1 << 2, tempfile);
-
             }
-
             else {
-
                 short key1 = ByteBuffer.wrap(buf).getShort();
-
                 short key2 = ByteBuffer.wrap(buf2).getShort();
-
                 if (key1 <= key2) {
-
                     pool.insert(buf, 4, curr << 2, inputfile);
                     i1++;
                     pool.getbytes(buf, 4, i1 << 2, tempfile);
@@ -86,7 +65,6 @@ public class BufferSort {
                     pool.insert(buf2, 4, curr << 2, inputfile);
                     i2++;
                     pool.getbytes(buf2, 4, i2 << 2, tempfile);
-
                 }
 
             }
