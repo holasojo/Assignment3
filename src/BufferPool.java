@@ -3,8 +3,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 
 /**
- * Buffer pool class. Used by client to read and write to
- * a file.
+ * Buffer pool class. Used by client to read and write to a file.
  * 
  * 
  * @author sohyun
@@ -17,7 +16,6 @@ public class BufferPool {
     private BufferList<Buffer> pool;
 
     private RandomAccessFile input;
-     
 
     private int blockSize;
 
@@ -28,20 +26,23 @@ public class BufferPool {
     private int reads;
 
     private int writes;
-    
+
     private long fileLen;
-  
+
     private static byte[] temp2;
-    
+
     /**
-     * Buffer pool constructor.  
+     * Buffer pool constructor.
      * 
-     * @param newDisk The input file on disk.
-     * @param numBuffer The number of buffers allowed.
-     * @throws IOException 
+     * @param newDisk
+     *            The input file on disk.
+     * @param numBuffer
+     *            The number of buffers allowed.
+     * @throws IOException
      */
-    public BufferPool(RandomAccessFile newDisk, int numBuffer) throws IOException {
-        
+    public BufferPool(RandomAccessFile newDisk, int numBuffer)
+            throws IOException {
+
         pool = new BufferList<Buffer>(numBuffer);
         input = newDisk;
         hits = 0;
@@ -51,30 +52,31 @@ public class BufferPool {
         temp2 = new byte[4];
         fileLen = newDisk.length();
         blockSize = 4096;
-        
-        //Initializes the buffers in the pool.
+
+        // Initializes the buffers in the pool.
         for (int i = 0; i < numBuffer; i++) {
             pool.append(new Buffer(-1, blockSize, null));
         }
-        
-        //System.out.println(pool.length());
 
-        
+        // System.out.println(pool.length());
+
     }
 
-    
     /**
-     * Inserts  sz bytes from space into position
-     * pos in the buffer pool.
+     * Inserts sz bytes from space into position pos in the buffer pool.
      * 
-     * @param space The data to be copied.
-     * @param sz The number of bytes.
-     * @param pos The position of the bytes in the file.
-     * @param disk The parent file of the data.
+     * @param space
+     *            The data to be copied.
+     * @param sz
+     *            The number of bytes.
+     * @param pos
+     *            The position of the bytes in the file.
+     * @param disk
+     *            The parent file of the data.
      * @throws IOException
      */
-    public void insert(byte[] space, int sz, int pos, RandomAccessFile disk) 
-      throws IOException {
+    public void insert(byte[] space, int sz, int pos, RandomAccessFile disk)
+            throws IOException {
         int blockID = pos / blockSize;
         int poolIndex = this.bufferAt(blockID, disk);
 
@@ -89,51 +91,53 @@ public class BufferPool {
             hits++;
             pool.promote(poolIndex);
         }
-                         
-        System.arraycopy(space, 0, pool.getValue().getBuffer(), 
-                pos % blockSize , sz);
-        
+
+        System.arraycopy(space, 0, pool.getValue().getBuffer(), pos % blockSize,
+                sz);
+
         pool.getValue().setDirty(true);
         pool.getValue().setFile(disk);
     }
 
-    
     /**
-     * Copies sz bytes from position pos in the buffer pool
-     * to the byte array space.
+     * Copies sz bytes from position pos in the buffer pool to the byte array
+     * space.
      * 
-     * @param space The container for the data.
-     * @param sz The number of bytes
-     * @param pos The position in the buffer pool.
-     * @param disk The parent file of the desired data.
+     * @param space
+     *            The container for the data.
+     * @param sz
+     *            The number of bytes
+     * @param pos
+     *            The position in the buffer pool.
+     * @param disk
+     *            The parent file of the desired data.
      * @throws IOException
      */
     public void getbytes(byte[] space, int sz, int pos, RandomAccessFile disk)
-      throws IOException {
+            throws IOException {
         int blockID = pos / blockSize;
         int poolIndex = this.bufferAt(blockID, disk);
 
         // if buffer is not in the pool
         if (poolIndex < 0) {
             pool.moveToEnd();
-            // value in buffer has changed, write to file
+            // buffer is dirty
             if (pool.getValue().isDirty()) {
-                // seeks and writes to file
-               
-                    pool.getValue().getFile().seek(
-                            pool.getValue().getID() * blockSize);
-                    pool.getValue().getFile().write(pool.getValue().getBuffer());
-                    writes++;
-                
+                // seek and write to the file
+                pool.getValue().getFile()
+                        .seek(pool.getValue().getID() * blockSize);
+                pool.getValue().getFile().write(pool.getValue().getBuffer());
+                writes++;
 
             }
-            // seeks and reads new block from file to buffer pool
-
             // moves to correct position in file
             disk.seek(blockID * blockSize);
-            // overwrites LRU block with new block values from file
-            disk.read(pool.getValue().getBuffer(), 0, blockSize); //changed to read directly into buffer
-            //pool.getValue().setBuffer(temp.clone());
+            // read the new one and put in to the buffer
+            disk.read(pool.getValue().getBuffer(), 0, blockSize); // changed to
+                                                                  // read
+                                                                  // directly
+                                                                  // into buffer
+            // pool.getValue().setBuffer(temp.clone());
             reads++;
 
             pool.getValue().setID(blockID);
@@ -149,21 +153,22 @@ public class BufferPool {
         }
 
         // gets desired bytes from buffer pool
-        int startingByteInBlock = pos % blockSize;
+        int startIndex = pos % blockSize;
         pool.moveToStart();
-        
-        System.arraycopy(pool.getValue().getBuffer(), startingByteInBlock, space, 0, sz);
-        
+
+        System.arraycopy(pool.getValue().getBuffer(), startIndex, space, 0, sz);
 
     }
 
     /**
      * flushes all values from cache to disk
-     * @throws IOException 
+     * 
+     * @throws IOException
      */
     public void flush() throws IOException {
         pool.moveToStart();
-        for (int i = 0; i < pool.length(); pool.moveToPos(++i)) { //changed to ++i
+        for (int i = 0; i < pool.length(); pool.moveToPos(++i)) { // changed to
+                                                                  // ++i
             if (pool.getValue().isDirty()) {
 
                 input.seek(pool.getValue().getID() * blockSize);
@@ -178,14 +183,15 @@ public class BufferPool {
      * 
      * @param blockNumber
      *            block number you are looking for
-     * @param file The file that the desired buffer's data 
-     * belongs to.
+     * @param file
+     *            The file that the desired buffer's data belongs to.
      * @return location in the pool
      */
     private int bufferAt(int blockNumber, RandomAccessFile file) {
         pool.moveToStart();
         for (int i = 0; i < pool.length(); i++) {
-            if (blockNumber == pool.getValue().getID() &&  pool.getValue().getFile() == file) {
+            if (blockNumber == pool.getValue().getID()
+                    && pool.getValue().getFile() == file) {
                 return i;
             }
             pool.next();
@@ -195,47 +201,50 @@ public class BufferPool {
 
     /**
      * Determines length of file
+     * 
      * @return file length.
      * @throws IOException
      */
-    public long fileLength() throws IOException{
+    public long fileLength() throws IOException {
         return fileLen;
     }
-    
+
     /**
-     * Number of times data was found in 
-     * buffer pool.
+     * Number of times data was found in buffer pool.
+     * 
      * @return hits.
      */
     public int getCacheHits() {
         return hits;
     }
-    
+
     /**
      * Number of times disk was read.
+     * 
      * @return number of reads.
      */
     public int getDiskReads() {
-        
+
         return reads;
-        
+
     }
 
     /**
      * Getter for disk writes
+     * 
      * @return number of writes.
      */
     public int getDiskWrites() {
         return writes;
     }
-   
+
     /**
      * Getter for pool misses
+     * 
      * @return misses
      */
     public int getCacheMisses() {
         return misses;
     }
 
-    
 }
