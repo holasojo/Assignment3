@@ -54,9 +54,9 @@ public class BufferSort {
                 pool.getbytes(buf, 4, i1 << 2, tempfile);
             }
             else {
-                short key1 = ByteBuffer.wrap(buf).getShort();
-                short key2 = ByteBuffer.wrap(buf2).getShort();
-                if (key1 <= key2) {
+//                short key1 = ByteBuffer.wrap(buf).getShort();
+//                short key2 = ByteBuffer.wrap(buf2).getShort();
+                if (getKey(buf) <= getKey(buf2)) {
                     pool.insert(buf, 4, curr << 2, inputfile);
                     i1++;
                     pool.getbytes(buf, 4, i1 << 2, tempfile);

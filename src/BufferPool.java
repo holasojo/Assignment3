@@ -128,7 +128,8 @@ public class BufferPool {
             // moves to correct position in file
             disk.seek(blockID * BLOCK_SIZE);
             // overwrites LRU block with new block values from file
-            disk.read(pool.getValue().getBuffer(), 0, BLOCK_SIZE); //changed to read directly into buffer
+            disk.read(pool.getValue().getBuffer(), 0, BLOCK_SIZE); 
+            //changed to read directly into buffer
             //pool.getValue().setBuffer(temp.clone());
             reads++;
 
