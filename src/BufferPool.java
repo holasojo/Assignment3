@@ -15,7 +15,6 @@ public class BufferPool {
 
     private BufferList<Buffer> pool;
 
-    private RandomAccessFile input;
 
     private int blockSize;
 
@@ -44,7 +43,6 @@ public class BufferPool {
             int numBuffer) throws IOException {
 
         pool = new BufferList<Buffer>(numBuffer);
-        input = newDisk;
         hits = 0;
         misses = 0;
         reads = 0;
